@@ -1,51 +1,60 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 #navbar-icon{
   width: 50px;
   height: 50px;
   margin-right: 10px;
   margin-left: 10px;
+  padding: 1px;
+  background-image: linear-gradient(to right bottom, #715d2a, #88723a, #9f874a, #b79d5b, #d0b46c, #d2b56a, #d5b669, #d7b767, #c3a352, #b08f3c, #9c7b27, #89680e);
+  border-radius: 30%;
 }
 
 #navbar-settings{
   margin-right: 10px;
 }
 
+#nav{
+  border-bottom: 1px solid;
+  border-image: linear-gradient(to right, #966f0b, #a58029, #b39140, #c2a357, #d1b56e, #d1b670, #d1b671, #d1b773, #c2a760, #b3974d, #a5873a, #967827) 30;
+}
 
+.home-page-one{
+    display: flex;
+    position: relative;
+    height: 100vh;
+    background-color: #22282e;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#page-one-info{
+  margin-left: 15px;
+  color: #d6e2ed;
+  font-size: 70px;
+} 
+
+#page-one-img{
+  height: 600px;
+  width: auto;
+  margin-right: 15px;
+} 
+
+.home-page-two{
+  position: relative;
+  height: 100vh;
+  background-color: #5e6872;
+}
+
+#page-two-info{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  color: #5e6872;
+}
+
+.page-divider{
+  height: 200px;
+  background-image: linear-gradient(180deg, #22282e, #5e6872);
+}
