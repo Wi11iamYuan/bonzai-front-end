@@ -19,6 +19,7 @@ export const TopNavbar = () => {
           </Nav>
           <Nav>
             <Nav.Link href="/settings" id="navbar-settings" className="text-light">Settings</Nav.Link>
+            <Nav.Link href="/login" id="navbar-settings" className="text-light">Login/Register</Nav.Link>
           </Nav>
         </Navbar.Collapse>
    
