@@ -6,10 +6,9 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { HomePage } from './pages/Home';
 import { DensityPage } from './pages/Density';
 import { StatsPage } from './pages/Stats';
-import { InfoPage } from './pages/Info';
-import { SettingsPage } from './pages/Settings';
 import { LoginPage } from './pages/Login';
 import { RegisterPage } from './pages/Register';
+
 
 function App() {
 
@@ -31,12 +30,6 @@ function App() {
             </Route>
 
             <Route exact path="/stats" element={isAuthenticated ? <StatsPage /> : <Navigate to="/login" />}>
-            </Route>
-
-            <Route exact path="/info" element={isAuthenticated ? <InfoPage /> : <Navigate to="/login" />}>
-            </Route>
-
-            <Route exact path="/settings" element={isAuthenticated ? <SettingsPage /> : <Navigate to="/login" />}>
             </Route>
 
             <Route exact path="/login" element={isAuthenticated ? <Navigate to="/home" /> : <LoginPage />}>

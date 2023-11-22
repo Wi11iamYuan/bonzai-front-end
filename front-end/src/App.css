@@ -4,17 +4,45 @@
   margin-right: 10px;
   margin-left: 10px;
   padding: 1px;
-  background-image: linear-gradient(to right bottom, #715d2a, #88723a, #9f874a, #b79d5b, #d0b46c, #d2b56a, #d5b669, #d7b767, #c3a352, #b08f3c, #9c7b27, #89680e);
+  background-image: linear-gradient(to right bottom, #715d2a, #88723a, #9f874a, #b79d5b, #e9cb7f, #d2b56a, #fcd779, #d7b767, #e9c876, #b08f3c, #9c7b27, #89680e);
   border-radius: 30%;
 }
 
 #navbar-settings{
-  margin-right: 10px;
+  margin-right: 20px;
+  padding:0;
+  color: #ebb723;
+  font-size: 16px;
+  transition: 0.3s;
 }
 
-#nav{
+#tab{
+  color: #fffbef;
+  font-size: 16px;
+  padding:0;
+  margin-right: 20px;
+  transition: 0.3s;
+
+}
+
+
+.top-hover:hover{
+  opacity: 70%;
   border-bottom: 1px solid;
-  border-image: linear-gradient(to right, #966f0b, #a58029, #b39140, #c2a357, #d1b56e, #d1b670, #d1b671, #d1b773, #c2a760, #b3974d, #a5873a, #967827) 30;
+}
+
+#brand{
+  color: #ffbb29;
+  font-size: 25px;
+  position: relative;
+  margin-right: 25px;
+  padding:0;
+  transition: 0.3s;
+}
+
+#brand:hover{
+  opacity: 70%;
+  border-bottom: 1px solid;
 }
 
 .home-page-one{
@@ -26,35 +54,109 @@
     justify-content: space-between;
 }
 
-#page-one-info{
-  margin-left: 15px;
-  color: #d6e2ed;
-  font-size: 70px;
-} 
-
-#page-one-img{
-  height: 600px;
-  width: auto;
-  margin-right: 15px;
-} 
-
-.home-page-two{
-  position: relative;
-  height: 100vh;
-  background-color: #5e6872;
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
-#page-two-info{
-  display: flex;
+
+@keyframes slideInUp {
+  0% {
+    opacity: 100%;
+    transform: translateY(500%);
+  }
+  100% {
+    opacity: 100%;
+    transform: translateY(0);
+  }
+}
+
+#page-one-info{
+  margin-left: 75px;
+  color: #d6e2ed;
+  font-size: 100px;
+} 
+
+#p1{
+  animation: 0.2s ease-out 0s 1 slideInUp;
+  animation-delay:0s;
+  animation-fill-mode: both;
+}
+
+#p2{
+  animation: 0.2s ease-out 0s 1 slideInUp;
+  animation-delay:0.1s;
+  animation-fill-mode: both;
+
+}
+
+#p3{
+  animation: 0.2s ease-out 0s 1 slideInUp;
+  animation-delay:0.2s;
+  animation-fill-mode: both;
+
+}
+
+#page-one-img{
+  height: 100vh;
+  width: auto;
+  margin-right: 150px;
+  animation: 0.5s ease-out 0s 1 slideInRight;
+}
+
+.densityInf{
+  display: block;
+  position: absolute;
+  color: #ebb723;
+  font-size: 15px;
+  margin-top: 100px;
+  margin-left: 15px;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
+  transition: 0.3s;
+}
+
+#stats{
+  display: flex;
   position: absolute;
   height: 100vh;
   width: 100%;
-  color: #5e6872;
+  background-color: #22282e;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.page-divider{
-  height: 200px;
-  background-image: linear-gradient(180deg, #22282e, #5e6872);
+#info-icon{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  margin-top: 75px;
+  margin-left: 10px;
+  padding: 1px;
+  filter: brightness(0) saturate(100%) invert(89%) sepia(27%) saturate(1768%) hue-rotate(336deg) brightness(93%) contrast(97%);
+  transition: 0.3s;
 }
+
+#info-icon:hover{
+  opacity: 70%;
+}
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-150%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* when hovering inf0-icon, the densityInf will slide in from the left, and when not hovering, it will slide out to the left*/
+#info-icon:hover ~ .densityInf{
+  animation: 0.2s ease-in-out 0s 1 slideInLeft;
+  animation-fill-mode: both;
+}
+

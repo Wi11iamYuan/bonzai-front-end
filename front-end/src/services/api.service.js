@@ -1,4 +1,4 @@
-const BASE = "http://127.0.0.1:8000/"
+const BASE = process.env.REACT_APP_API_URL;
 
 export const getStats = () => {
     return fetch(`${BASE}stats/2`);
@@ -13,7 +13,22 @@ export const login = (username,password) => {
     method:"POST",
     body:JSON.stringify(data)
   };
-  return fetch(`${BASE}auth/login/`,options);
+  return fetch(`${BASE}/auth/login/`,options);
+}
+
+export const register = (username,password,email) => {
+  let data = {
+    username,
+    password,
+    email
+  };
+
+  let options = {
+    method:"POST",
+    body:JSON.stringify(data)
+  };
+
+  return fetch(`${BASE}/auth/register/`,options);
 }
 
 // const [stats, setStats] = useState(null);

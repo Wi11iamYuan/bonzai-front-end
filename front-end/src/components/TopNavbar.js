@@ -6,20 +6,19 @@ import Image from 'react-bootstrap/Image';
 
 export const TopNavbar = () => {
     return (
-    <Navbar collapseOnSelect expand="lg" fixed = "top" className="bg-dark" id="nav">
+    <Navbar collapseOnSelect expand="lg" fixed = "top"  id="nav">
+      <Nav.Link href="/home">
         <Image src="./logo_no_name.svg" id="navbar-icon"/>
-        <Navbar.Brand href="/home" className="text-light" id= 'brand'>Bonzai</Navbar.Brand>
+      </Nav.Link>
+      <Nav.Link href="/home" id="brand">Bonzai</Nav.Link>
+      
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/density" className="text-light">Density Map</Nav.Link>
-            <Nav.Link href="/stats" className="text-light">Stats Page</Nav.Link>
-            <Nav.Link href="/info" className="text-light">Information</Nav.Link>
-          </Nav>
-          <Nav>
-            <Nav.Link href="/settings" id="navbar-settings" className="text-light">Settings</Nav.Link>
-            <Nav.Link href="/login" id="navbar-settings" className="text-light">Login/Register</Nav.Link>
+            <Nav.Link href="/login" className = 'top-hover' id="navbar-settings">Login / Register</Nav.Link>
+            <Nav.Link href="/density" className = 'top-hover' id='tab'>Density Map</Nav.Link>
+            <Nav.Link href="/stats" className = 'top-hover' id='tab'>Stats Page</Nav.Link>
           </Nav>
         </Navbar.Collapse>
    

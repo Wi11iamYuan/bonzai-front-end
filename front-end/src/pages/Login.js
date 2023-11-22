@@ -18,6 +18,9 @@ export const LoginPage = () => {
       try{
         let res = await login(username,password);
         let token = await res.text();
+        if(token == "Not Authorized"){
+          return;
+        }
         console.log(token)
         console.log(res);
         localStorage.setItem("token", token);
@@ -26,12 +29,31 @@ export const LoginPage = () => {
         console.log(e);
       }
     }
+
+    const switchReg = (e) => {
+      navigate("/register");
+    }
     return(
     <>
     <div>
 
 
       <Form onSubmit={onSubmit}>
+      <Form.Group>
+        <Form.Label htmlFor="username">Email</Form.Label>
+      <Form.Control
+        type="text"
+        id="username"
+        // aria-describedby="passwordHelpBlock"
+        onChange={(e) => setUsername(e.target.value)}
+      />
+      <Form.Text muted>
+        Your password must be 8-20 characters long, contain letters and numbers,
+        and must not contain spaces, special characters, or emoji.
+    </Form.Text>
+        </Form.Group>
+
+
         <Form.Group>
         <Form.Label htmlFor="inputPassword5">Password</Form.Label>
       <Form.Control
@@ -45,26 +67,11 @@ export const LoginPage = () => {
         and must not contain spaces, special characters, or emoji.
     </Form.Text>
         </Form.Group>
-
-        <Form.Group>
-        <Form.Label htmlFor="username">Email</Form.Label>
-      <Form.Control
-        type="text"
-        id="username"
-        // aria-describedby="passwordHelpBlock"
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <Form.Text muted>
-        Your password must be 8-20 characters long, contain letters and numbers,
-        and must not contain spaces, special characters, or emoji.
-    </Form.Text>
-        </Form.Group>
       
-
     <div>
     <Button type="submit">Login</Button>
     <a href="/register">
-    <Button type="submit">Register</Button>
+    <Button type="submit" onClick={switchReg}>Register</Button>
     </a>
     </div>
       </Form>

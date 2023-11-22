@@ -1,31 +1,25 @@
 import '../App.css';
 
 import { TopNavbar } from "../components/TopNavbar";
-import { Parallax } from 'react-parallax';
 
 import Image from 'react-bootstrap/Image';
+import { useState, useEffect,useRef } from 'react';
 
 const PageOne = () =>{
-    return(
-        <div className="home-page-one" strength={800}>
+    const [startAnimation, setStartAnimation] = useState(false);
+    return(<>
+    <div className="home-page-one" >
             <div id="page-one-info">
-                Hello, <br></br>
-                Welcome to Bonzai
+                <p id="p1">Hello,</p>
+                <p id="p2">Welcome to</p>
+                <p id="p3">Bonzai</p>
             </div>
             <div>
                 <Image src = '../logo_no_name.svg' id="page-one-img"></Image>
             </div>
         </div>
-    );
-}
-
-const PageTwo = () =>{
-    return(
-        <div className="home-page-two" strength={800}>
-            <div id="page-two-info">
-                hey hey hey
-            </div>
-        </div>
+    </>
+        
     );
 }
 
@@ -34,8 +28,6 @@ export const HomePage = () => {
         <>
         <TopNavbar />
         <PageOne />
-        <div className = "page-divider"></div>
-        <PageTwo />
         </>
     );
 }
