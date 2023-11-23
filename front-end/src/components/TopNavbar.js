@@ -7,9 +7,6 @@ import Image from 'react-bootstrap/Image';
 export const TopNavbar = () => {
     return (
     <Navbar collapseOnSelect expand="lg" fixed = "top"  id="nav">
-      <Nav.Link href="/home">
-        <Image src="./logo_no_name.svg" id="navbar-icon"/>
-      </Nav.Link>
       <Nav.Link href="/home" id="brand">Bonzai</Nav.Link>
       
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

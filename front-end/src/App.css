@@ -1,24 +1,14 @@
-#navbar-icon{
-  width: 50px;
-  height: 50px;
-  margin-right: 10px;
-  margin-left: 10px;
-  padding: 1px;
-  background-image: linear-gradient(to right bottom, #715d2a, #88723a, #9f874a, #b79d5b, #e9cb7f, #d2b56a, #fcd779, #d7b767, #e9c876, #b08f3c, #9c7b27, #89680e);
-  border-radius: 30%;
-}
-
 #navbar-settings{
   margin-right: 20px;
   padding:0;
-  color: #ebb723;
-  font-size: 16px;
+  color: rgb(104, 183, 235);
+  font-size: 20px;
   transition: 0.3s;
 }
 
 #tab{
   color: #fffbef;
-  font-size: 16px;
+  font-size: 20px;
   padding:0;
   margin-right: 20px;
   transition: 0.3s;
@@ -32,9 +22,10 @@
 }
 
 #brand{
-  color: #ffbb29;
-  font-size: 25px;
+  color: rgb(104, 183, 235);
+  font-size: 40px;
   position: relative;
+  margin-left: 20px;
   margin-right: 25px;
   padding:0;
   transition: 0.3s;
@@ -76,10 +67,32 @@
 }
 
 #page-one-info{
+  position:fixed;
   margin-left: 75px;
   color: #d6e2ed;
-  font-size: 100px;
+  font-size: 90px;
 } 
+/*
+make the background the wave.svg in .wave
+*/
+.wave {
+  background: url("./wave.svg") repeat-x;
+  position: absolute;
+  bottom:0%;
+  margin-bottom: 0px;
+  width: 5760px;
+  height: 426px;
+  animation: wave 10s linear infinite;
+}
+
+@keyframes wave {
+  0%{
+    margin-left: 0%;
+  }
+  100%{
+    margin-left: -1440px;
+  }
+}
 
 #p1{
   animation: 0.2s ease-out 0s 1 slideInUp;
@@ -101,12 +114,31 @@
 
 }
 
+#p4{
+  animation: 0.2s ease-out 0s 1 slideInUp;
+  animation-delay:0.3s;
+  animation-fill-mode: both;
+  font-size: 25px;
+  color: #7aecd9;
+}
+
 #page-one-img{
+  position: fixed;
   height: 100vh;
   width: auto;
+  right: 0%;
   margin-right: 150px;
   animation: 0.5s ease-out 0s 1 slideInRight;
 }
+
+#page-one-img-div{
+  position: fixed;
+  height: 100vh;
+  width: auto;
+  right: 0%;
+  margin-right: 150px;
+}
+
 
 .densityInf{
   display: block;
