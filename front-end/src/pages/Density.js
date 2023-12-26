@@ -3,7 +3,8 @@ import { TopNavbar } from "../components/TopNavbar";
 import Plotly from 'plotly.js-dist-min';
 import { useState, useEffect } from 'react';
 import Image from 'react-bootstrap/Image';
-import infosvg from '../info.svg';
+
+import '../styles/Density.css';
 
 const DensePage = () => {
     return(<>
@@ -14,7 +15,7 @@ const DensePage = () => {
                 <div id="p3d">and COVID-19 deaths for each state from 2020-Now.</div>
             </div>
             <div>
-                <img src={infosvg} id="info-icon"></img>
+                <img src='../../public/images/info.svg' id="info-icon"></img>
             </div>
         </> 
         );

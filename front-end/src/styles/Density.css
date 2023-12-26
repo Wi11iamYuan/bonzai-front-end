@@ -1,0 +1,42 @@
+.densityInf{
+    display: block;
+    position: absolute;
+    color: #ebb723;
+    font-size: 15px;
+    margin-top: 100px;
+    margin-left: 15px;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s;
+  }
+  
+  #info-icon{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    margin-top: 75px;
+    margin-left: 10px;
+    padding: 1px;
+    filter: brightness(0) saturate(100%) invert(89%) sepia(27%) saturate(1768%) hue-rotate(336deg) brightness(93%) contrast(97%);
+    transition: 0.3s;
+  }
+  
+  #info-icon:hover{
+    opacity: 70%;
+  }
+  
+  @keyframes slideInLeft {
+    0% {
+      transform: translateX(-150%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  /* when hovering inf0-icon, the densityInf will slide in from the left, and when not hovering, it will slide out to the left*/
+  #info-icon:hover ~ .densityInf{
+    animation: 0.2s ease-in-out 0s 1 slideInLeft;
+    animation-fill-mode: both;
+  }
+  

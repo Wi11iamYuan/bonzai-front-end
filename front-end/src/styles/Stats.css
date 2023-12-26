@@ -1,0 +1,9 @@
+#stats{
+    display: flex;
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-color: #22282e;
+    align-items: center;
+    justify-content: space-between;
+  }

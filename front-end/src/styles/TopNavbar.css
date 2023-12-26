@@ -1,0 +1,35 @@
+#navbar-settings{
+    margin-right: 20px;
+    padding:0;
+    color: rgb(104, 183, 235);
+    font-size: 20px;
+    transition: 0.3s;
+  }
+  
+  #tab{
+    color: #fffbef;
+    font-size: 20px;
+    padding:0;
+    margin-right: 20px;
+    transition: 0.3s;
+  
+  }
+  
+  .top-hover:hover{
+    opacity: 70%;
+    border-bottom: 1px solid;
+  }
+  
+  #brand{
+    color: rgb(104, 183, 235);
+    font-size: 40px;
+    position: relative;
+    margin-left: 20px;
+    margin-right: 25px;
+    padding:0;
+    transition: 0.3s;
+  }
+  
+  #brand:hover{
+    opacity: 50%;
+  }

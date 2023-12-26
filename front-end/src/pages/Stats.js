@@ -2,6 +2,8 @@ import { TopNavbar } from "../components/TopNavbar";
 import Plotly from 'plotly.js-dist-min';
 import { useState, useEffect } from 'react';
 
+import '../styles/Stats.css';
+
  
 export const StatsPage = () => {
     const createChart = () =>{

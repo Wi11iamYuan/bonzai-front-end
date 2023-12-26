@@ -1,4 +1,3 @@
-import './App.css';
 import { getStats } from './services/api.service';
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
