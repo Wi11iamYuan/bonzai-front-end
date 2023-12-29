@@ -2,7 +2,8 @@
     display: flex;
     position: relative;
     height:100vh;
-    background-color: #22282e;
+    background: rgb(34,40,46);
+    background: linear-gradient(29deg, rgba(34,40,46,1) 50%, rgba(54,48,70,1) 63%, rgba(72,55,94,1) 73%, rgba(104,67,135,1) 86%, rgba(147,83,190,1) 100%);
     overflow:hidden;
   }
   
@@ -11,7 +12,6 @@
     width: 50%;
     height: 100vh;
     overflow: hidden;
-    background-color: #22282e;
     right:0;
   }
   
@@ -48,7 +48,8 @@
   }
   
   #login-email{
-    margin-bottom:30px;
+    margin-bottom:25px;
+    border: 3px solid rgb(43, 170, 255);
   }
   
   #login-email-hold{
@@ -56,7 +57,9 @@
   }
   
   #login-password{
-    margin-bottom:30px;
+    margin-bottom:25px;
+    border: 3px solid rgb(43, 170, 255);
+
   }
   
   #login-password-hold{
@@ -64,9 +67,10 @@
   }
   
   .login-button{
-    margin-right: 15px;
-    padding-left: 20px !important;
-    padding-right: 20px !important;
+    margin-right: 25px;
+    letter-spacing: 0.5px;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
     padding-top: 5px !important;
     padding-bottom: 5px !important;
   }
@@ -83,6 +87,53 @@
   #login-button1:hover{
     background-color: rgb(25, 115, 175);
   }
+
+  #login-button1-animated{
+    background-color: rgb(16, 159, 255);
+    animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+  }
+
+  #login-email-animated{
+    margin-bottom:25px;
+    border: 3px solid rgb(43, 170, 255);
+    animation: red-err 1s linear;
+  }
+
+  #login-password-animated{
+    margin-bottom:25px;
+    border: 3px solid rgb(43, 170, 255);
+    animation: red-err 1s linear;
+  }
+
+  @keyframes red-err{
+    0%{
+      border: 3px solid rgb(43, 170, 255);
+    }
+    50%{
+      border: 3px solid rgb(255, 0, 0);
+    }
+    100%{
+      border: 3px solid rgb(43, 170, 255);
+    }
+  }
+
+  @keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+  
+    40%, 60% {
+      transform: translate3d(4px, 0, 0);
+    }
+  }  
   
   .rotate {
     position:absolute;

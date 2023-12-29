@@ -1,0 +1,240 @@
+#reg-page {
+    display: flex;
+    position: relative;
+    height: 100vh;
+    background: rgb(34, 40, 46);
+    background: linear-gradient(29deg, rgba(34, 40, 46, 1) 50%, rgb(37, 54, 54) 63%, rgb(42, 74, 75) 73%, rgb(58, 115, 119) 86%, rgb(74, 165, 160) 100%);
+    overflow: hidden;
+}
+
+#reg-right-hold {
+    position: absolute;
+    width: 50%;
+    height: 100vh;
+    overflow: hidden;
+    right: 0;
+}
+
+#reg-right {
+    z-index: 1;
+    display: flex;
+    width: 50%;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+#reg-hold {
+    width: 400px;
+    font-size: 25px;
+    padding-top: 150px;
+    padding-bottom: 150px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+#reg-title {
+    display: flex;
+    width: 50%;
+    color: rgb(16, 159, 255);
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    left: 0;
+}
+
+#reg-title h1 {
+    font-size: 75px;
+}
+
+#reg-email {
+    margin-bottom: 25px;
+    border: 3px solid rgb(43, 170, 255);
+}
+
+#reg-email-hold {
+    color: rgb(114, 199, 255);
+}
+
+#reg-password {
+    margin-bottom: 15px;
+    border: 3px solid rgb(43, 170, 255);
+
+}
+
+#reg-password-hold {
+    color: rgb(114, 199, 255);
+}
+
+.reg-button {
+    margin-right: 25px;
+    letter-spacing: 0.5px;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+}
+
+#reg-button1 {
+    background-color: rgb(16, 159, 255);
+    transition: background-color 0.3s ease;
+}
+
+#reg-button2 {
+    transition: background-color 0.3s ease !important;
+}
+
+#reg-button1:hover {
+    background-color: rgb(25, 115, 175);
+}
+
+#reg-button1-animated {
+    background-color: rgb(16, 159, 255);
+    animation: shake 0.5s cubic-bezier(.36, .07, .19, .97) both;
+}
+
+#reg-email-animated {
+    margin-bottom: 25px;
+    border: 3px solid rgb(43, 170, 255);
+    animation: red-err 1s linear;
+}
+
+#reg-password-animated {
+    margin-bottom: 15px;
+    border: 3px solid rgb(43, 170, 255);
+    animation: red-err 1s linear;
+}
+
+.reg-email-nothing{
+    margin-bottom: 25px;
+    border: 3px solid rgb(43, 170, 255);
+}
+
+.reg-password-nothing{
+    margin-bottom: 15px;
+    border: 3px solid rgb(43, 170, 255);
+}
+
+.reg-email-animated-only{
+    margin-bottom: 25px;
+    border: 3px solid rgb(43, 170, 255);
+    animation: red-err 1s linear;
+}
+
+.reg-password-animated-only{
+    margin-bottom: 15px;
+    border: 3px solid rgb(43, 170, 255);
+    animation: red-err 1s linear;
+}
+
+#reg-password-req{
+    color: rgb(114, 199, 255);
+    font-size: 12px;
+    line-height: 15px;
+    padding: 0;
+    margin: 0;
+    margin-bottom:15px;
+}
+
+@keyframes red-err {
+    0% {
+        border: 3px solid rgb(43, 170, 255);
+    }
+
+    50% {
+        border: 3px solid rgb(255, 0, 0);
+    }
+
+    100% {
+        border: 3px solid rgb(43, 170, 255);
+    }
+}
+
+@keyframes shake {
+
+    10%,
+    90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%,
+    80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
+
+.rotate {
+    position: absolute;
+    animation-name: ani-rotate;
+    animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+}
+
+@keyframes ani-rotate {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.float {
+    position: absolute;
+    animation-name: ani-float;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes ani-float {
+    0% {
+        transform: translate(0, 0px);
+    }
+
+    50% {
+        transform: translate(0, 30px);
+    }
+
+    100% {
+        transform: translate(0, -0px);
+    }
+}
+
+#top-left-blob {
+    left: 5%;
+    width: 250px;
+    height: 250px;
+}
+
+#lower-left-blob1 {
+    width: 400px;
+    height: 400px;
+    bottom: -150px;
+    left: -100px;
+}
+
+#lower-right-blob {
+    width: 400px;
+    height: 400px;
+    animation-delay: 1s;
+    bottom: -100px;
+    right: -100px;
+    z-index: 1;
+}

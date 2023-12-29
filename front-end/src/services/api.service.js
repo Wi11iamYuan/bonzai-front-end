@@ -2,8 +2,19 @@
 const BASE = "http://127.0.0.1:8000";
 
 
-export const getStats = () => {
-    return fetch(`${BASE}stats/2`);
+export const getStats = (disease, geo, year, group) => {
+  let data = {
+    disease,
+    geo,
+    year,
+    group
+  };
+  let options = {
+    method:"POST",
+    body:JSON.stringify(data)
+  };
+
+  return fetch(`${BASE}/stats/`,options);
 }
 
 export const login = (username,password) => {

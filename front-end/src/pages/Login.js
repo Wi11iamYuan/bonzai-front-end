@@ -8,33 +8,37 @@ import '../styles/Login.css';
 
 
 export const LoginPage = () => {
-  const [password, setPassword] = useState(null);
-  const [username, setUsername] = useState(null);
+  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("");
+  const [isAnimated, setIsAnimated] = useState(false);
+
   const navigate = useNavigate();
 
-    const onSubmit = async (e) => {
-      console.log(password);
-      console.log(username);
-      
+    const onSubmit = async (e) => {    
       e.preventDefault();
+
       try{
         let res = await login(username,password);
         let token = await res.text();
-        if(token == "Not Authorized"){
+        if(token == "Not authorized."){
+          setIsAnimated(true);
+          setTimeout(() => {
+            setIsAnimated(false);
+          }, 1000);
           return;
         }
-        console.log(token)
-        console.log(res);
+
         localStorage.setItem("token", token);
         navigate("/home");
       }catch(e){
-        console.log(e);
+
       }
     }
 
     const switchReg = (e) => {
       navigate("/register");
     }
+
     return(
     <>
     <div id='login-page'>
@@ -84,16 +88,16 @@ export const LoginPage = () => {
         <Form onSubmit={onSubmit}>
           <Form.Group>
             <Form.Label id="login-email-hold" htmlFor="login-email">Email Address</Form.Label>
-            <Form.Control type="text" id="login-email" placeholder='Enter email' onChange={(e) => setUsername(e.target.value)} />
+            <Form.Control type="text" id={isAnimated ? "login-email-animated" : "login-email"} placeholder='Enter email' onChange={(e) => setUsername(e.target.value)} />
           </Form.Group>
 
           <Form.Group>
             <Form.Label id="login-password-hold" htmlFor="login-password">Password</Form.Label>
-            <Form.Control type="password" id="login-password" placeholder='Enter password' onChange={(e) => setPassword(e.target.value)} />
+            <Form.Control type="password" id={isAnimated ? "login-password-animated" : "login-password"} placeholder='Enter password' onChange={(e) => setPassword(e.target.value)} />
           </Form.Group>
 
           <div>
-            <Button id = "login-button1" variant = 'primary' type="submit" className='login-button'>Login</Button>
+            <Button id = {isAnimated ? "login-button1-animated" : "login-button1"} variant = 'primary' type="submit" className='login-button'>Login</Button>
             
             <a href="/register">
               <Button id = "login-button2" variant = 'secondary' type="submit" className='login-button' onClick={switchReg}>Register</Button>

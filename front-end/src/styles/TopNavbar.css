@@ -14,6 +14,10 @@
     transition: 0.3s;
   
   }
+
+  .top-hover{
+    border-bottom: 1px solid transparent;
+  }
   
   .top-hover:hover{
     opacity: 70%;
