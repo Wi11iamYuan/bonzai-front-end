@@ -2,15 +2,18 @@
 const BASE = "http://127.0.0.1:8000";
 
 
-export const getStats = (disease, geo, year, group) => {
+export const getStats = (disease, year, group) => {
   let data = {
     disease,
-    geo,
     year,
     group
   };
   let options = {
     method:"POST",
+    headers:new Headers({
+      "Content-Type":"application/json",
+      "Authorization":`Token ${localStorage.getItem("token")}`
+    }),
     body:JSON.stringify(data)
   };
 
@@ -42,12 +45,3 @@ export const register = (username,password) => {
 
   return fetch(`${BASE}/auth/register/`,options);
 }
-
-// const [stats, setStats] = useState(null);
-  // const getAPIStats = async () => {
-  //   const res = await getStats();
-  //   setStats(res);
-  // }
-  // useEffect(() => {
-  //   getAPIStats();
-  // }, []);
