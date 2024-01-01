@@ -19,6 +19,8 @@ const PageOne = () =>{
             <div id='page-one-img-div'>
                 <Image src = '../images/logo_no_name.svg' id="page-one-img"></Image>
             </div>
+
+            <div id="name">Dev&gt;WilliamYuan</div>
         </div>
     </>
         

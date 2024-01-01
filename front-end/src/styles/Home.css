@@ -101,4 +101,14 @@
     right: 0%;
     margin-right: 150px;
   }
+
+  #name{
+    display: flex;
+    position:absolute;
+    right: 0;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    bottom:0;
+    color: #d6e2ed;
+  }
   

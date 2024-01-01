@@ -73,9 +73,8 @@ const DensePage = () => {
 
         try{
             setIsLoading(true);
-            let res = await getStats(selectedDisItems, selectedYearItems, selectedAgeItems);
+            let res = await getStats(selectedDisItems, selectedYearItems, selectedAgeItems, "All States");
             let data = await res.json();
-            console.log(data);
 
             let z = data["y_state"];
 
@@ -156,7 +155,7 @@ const DensePage = () => {
 
             <div id="custbox" className={open ? "custbox-open": "custbox-close"} onSubmit={onSubmit}>
 
-            <p id="cust-info">This interactive map displays deaths caused by common diseases in the United States. <br></br><br></br>Change parameters and save to customize the map. Double click to reset map position. </p>
+            <p id="cust-info">This interactive map displays deaths caused by common diseases in the United States. <br></br><br></br>Change parameters and save to customize the map. Double click the map to reset position. Click the question mark to toggle visibility.</p>
 
             <div className ="cust-title">Disease</div>
             <ListGroup horizontal >

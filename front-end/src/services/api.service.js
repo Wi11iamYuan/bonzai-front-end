@@ -2,11 +2,12 @@
 const BASE = "http://127.0.0.1:8000";
 
 
-export const getStats = (disease, year, group) => {
+export const getStats = (disease, year, group, state) => {
   let data = {
     disease,
     year,
-    group
+    group,
+    state
   };
   let options = {
     method:"POST",
