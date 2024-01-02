@@ -19,7 +19,7 @@ export const LoginPage = () => {
 
       try{
         let res = await login(username,password);
-        let token = await res.text();
+        let token = await res.json();
         if(token == "Not authorized."){
           setIsAnimated(true);
           setTimeout(() => {
@@ -28,7 +28,7 @@ export const LoginPage = () => {
           return;
         }
 
-        localStorage.setItem("token", token);
+        localStorage.setItem("token", token['access']);
         navigate("/home");
       }catch(e){
 

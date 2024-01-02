@@ -5,8 +5,10 @@ import { useState, useEffect } from 'react';
 import Image from 'react-bootstrap/Image';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
+import { useNavigate } from 'react-router-dom';
 
-import { getStats } from '../services/api.service';
+
+import { getStats, getMap } from '../services/api.service';
 
 
 
@@ -47,10 +49,9 @@ const layout = {
     }
 };
 
-const config = {mapboxAccessToken: "pk.eyJ1IjoibW9sY2hpbm1pbGsiLCJhIjoiY2xrMjNqeDU1MGF0MTNrcTE4bzJlYXI5dyJ9.khh3ewLNPzOIAjhA2tO6iA"};
-
-
 const DensePage = () => {
+    const navigate = useNavigate();
+
     const [open, setOpen] = useState(true);
 
     const toggleOpen = () => {
@@ -74,7 +75,16 @@ const DensePage = () => {
         try{
             setIsLoading(true);
             let res = await getStats(selectedDisItems, selectedYearItems, selectedAgeItems, "All States");
+
+            if(res.status == 401){
+                localStorage.setItem("token", "");
+                navigate("/home");
+                return;
+            }
+
             let data = await res.json();
+            
+            const config = {mapboxAccessToken: data["code"]};
 
             let z = data["y_state"];
 
@@ -211,17 +221,19 @@ const DensePage = () => {
 //USE PLOTLY.UPDATE('DIV ID', NEWDATA)
 export const DensityPage = () => {
 
-    const createChart = () =>{
+    const createChart = async () =>{
+        let res = await getMap();
+        let data = await res.text();
         Plotly.newPlot("stats",
         formattedData([ 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 ]
             ,"Deaths"),
         layout,
-        config
+        {mapboxAccessToken: data}
         );
     }
     useEffect(() => {
         createChart();
-    }
+    },[]
     );
 
     return(

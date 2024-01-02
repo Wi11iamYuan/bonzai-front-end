@@ -2,6 +2,19 @@
 const BASE = "http://127.0.0.1:8000";
 
 
+export const getMap = () => {
+  let data = {
+  };
+  let options = {
+    method:"POST",
+    headers:new Headers({
+      "Authorization":`Bearer ${localStorage.getItem("token")}`
+    }),
+    body:JSON.stringify(data)
+  };
+  return fetch(`${BASE}/stats/map/`,options);
+}
+
 export const getStats = (disease, year, group, state) => {
   let data = {
     disease,
@@ -13,7 +26,7 @@ export const getStats = (disease, year, group, state) => {
     method:"POST",
     headers:new Headers({
       "Content-Type":"application/json",
-      "Authorization":`Token ${localStorage.getItem("token")}`
+      "Authorization":`Bearer ${localStorage.getItem("token")}`
     }),
     body:JSON.stringify(data)
   };

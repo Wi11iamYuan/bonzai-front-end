@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
 import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
+import { useNavigate } from 'react-router-dom';
 
 
 import '../styles/Stats.css';
@@ -15,7 +15,10 @@ const formattedData = (x, y) => {
     let data = [{
         x: x,
         y: y,
-        type: 'bar'
+        type: 'bar',
+        marker: {
+            color: '#0d6efd'
+        }
     }];
     return data;
 }
@@ -63,6 +66,7 @@ const formattedLayout = (title, type) => {
 
 
 export const StatsPage = () => {
+    const navigate = useNavigate();
 
     const [isAnimated, setIsAnimated] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
@@ -82,6 +86,11 @@ export const StatsPage = () => {
             setIsLoading(true);
 
             let res = await getStats(selectedDisItems, selectedYearItems, selectedAgeItems, selectedStateItems);
+            if(res.status == 401){
+                localStorage.setItem("token", "");
+                navigate("/home");
+                return;
+            }
             let data = await res.json();
 
             let title1 = "State vs. Deaths";
@@ -102,7 +111,6 @@ export const StatsPage = () => {
 
             setIsLoading(false);
         } catch (e) {
-
         }
 
 
