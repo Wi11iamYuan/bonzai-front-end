@@ -1,5 +1,5 @@
 // const BASE = process.env.REACT_APP_API_URL;
-const BASE = "https://bonzai-server-4c7d151df85e.herokuapp.com/";
+const BASE = "https://bonzai-server-4c7d151df85e.herokuapp.com";
 
 
 export const getMap = () => {
