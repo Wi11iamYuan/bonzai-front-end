@@ -19,14 +19,15 @@ export const LoginPage = () => {
 
       try{
         let res = await login(username,password);
-        let token = await res.json();
-        if(token == "Not authorized."){
+        if(res.status == 401){
           setIsAnimated(true);
           setTimeout(() => {
             setIsAnimated(false);
           }, 1000);
           return;
         }
+        let token = await res.json();
+        
 
         localStorage.setItem("token", token['access']);
         navigate("/home");
