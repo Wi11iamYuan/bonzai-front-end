@@ -46,7 +46,7 @@ export const RegisterPage = () => {
       try{
         let res = await register(username,password1);
         let text = await res.text();
-        if(text == "Already exists." || res.status == 401){
+        if(text == "Already exists." || res.status == 401 || res.status == 400){
           setIsAnimated(true);
           setTimeout(() => {
             setIsAnimated(false);
@@ -94,9 +94,9 @@ export const RegisterPage = () => {
             
             <Form.Label id="reg-password-hold" htmlFor="reg-password">Password</Form.Label>
 
-            <Form.Control type="password" className = {isPasswordWork ? "reg-password-nothing" : "reg-password-animated-only"} id={isAnimated ? "reg-password-animated" : "reg-password"} placeholder='Enter password' onChange={(e) => setPassword1(e.target.value)} />
+            <Form.Control type="text" className = {isPasswordWork ? "reg-password-nothing" : "reg-password-animated-only"} id={isAnimated ? "reg-password-animated" : "reg-password"} placeholder='Enter password' onChange={(e) => setPassword1(e.target.value)} />
             
-            <Form.Control type="password" className = {isPasswordWork ? "reg-password-nothing" : "reg-password-animated-only"} id={isAnimated ? "reg-password-animated" : "reg-password"} placeholder='Retype password' onChange={(e) => setPassword2(e.target.value)} />
+            <Form.Control type="text" className = {isPasswordWork ? "reg-password-nothing" : "reg-password-animated-only"} id={isAnimated ? "reg-password-animated" : "reg-password"} placeholder='Retype password' onChange={(e) => setPassword2(e.target.value)} />
             
         
           </Form.Group>
