@@ -45,8 +45,15 @@ export const RegisterPage = () => {
 
       try{
         let res = await register(username,password1);
+        if(res.status == 401 || res.status == 400){
+          setIsAnimated(true);
+          setTimeout(() => {
+            setIsAnimated(false);
+          }, 1000);
+          return;
+        }
         let text = await res.text();
-        if(text == "Already exists." || res.status == 401 || res.status == 400){
+        if(text == "Already exists." || res.status == 400){
           setIsAnimated(true);
           setTimeout(() => {
             setIsAnimated(false);
